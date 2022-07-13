@@ -1,0 +1,172 @@
+/*Write a program in c to accept the length of three sides of a triangle. The
+program will then find the area of the triangle. */
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    float s1, s2, s3, S, area; // sides of the triangle, S is the semi perimeter
+    printf("Enter the sides of the triangle:\n");
+    scanf("%f", &s1);
+    scanf("%f", &s2);
+    scanf("%f", &s3);
+    S = (s1 + s2 + s3) / 2;
+    area = sqrt(S * (S - s1) * (S - s2) * (S - s3));
+    printf("The area of the triangle is %0.2f sq units", area);
+
+    return 0;
+}
+
+
+/*Write a program in C to convert some given Fahrenheit scale temperature to
+its corresponding Celsius scale value.*/
+#include<stdio.h>
+
+int main() {
+    float fahrenheit, celcius;
+    printf("Temperature in fahrenheit scale:\n");
+    scanf("%f",&fahrenheit);
+    celcius= ((fahrenheit-32)*5/9);
+    printf("Temperature in celcius scale:%d",celcius);
+    return 0;
+}
+
+/*Write a program in C to swap the contents of two variables
+(a) using a third variable*/
+#include <stdio.h>
+
+int main()
+{
+    int a, b, temp,c,d;
+    printf("Enter value of a and b:\n");
+    scanf("%d", &a);
+    scanf("%d", &b);
+    printf("Value of a and b before swap is %d,%d\n", a, b);
+    temp = a;
+    a = b;
+    b = temp;
+    //(b) without using a third variable
+    printf("Value of a and b after swap is %d,%d\n", a, b);
+    printf("Enter the value of c and d:\n");
+    scanf("%d",&c);
+    scanf("%d",&d);
+    printf("Value of c and d before swap is %d,%d\n", c,d);
+    c=c+d;
+    d=c-d;
+    c=c-d;
+    printf("Value of c and d after swap is %d,%d\n", c,d);
+    return 0;
+}
+
+/*Write a program in C to find the sum of the digits and reverse of a given three-
+digit number.*/
+#include<stdio.h>
+
+int main() {
+    int n,remainder,sum=0,temp,reverse=0;
+    printf("Enter a three digit number:\n");
+    scanf("%d",&n);
+    temp=n;
+    for(int i=0;i<3;i++)
+    {
+    remainder=n%10;
+    n=n/10;
+    sum=sum+remainder;
+    reverse= reverse*10 + remainder;
+    }
+    printf("The sum of the digit of %d is %d\n",temp,sum);
+    printf("The reverse of %d is %d\n", temp,reverse);
+    return 0;
+}
+
+//Write a program in C to implement the functionality of a NOT gate.
+#include<stdio.h>
+
+int main() {
+   int n,result;
+   printf("Enter value for Not gate:\n");
+   scanf("%d",&n);
+   if(n==0)
+   {
+    result=1;
+   }
+   else
+    {
+        result=0;
+    }
+    printf("Not of %d is %d", n,result);
+
+    return 0;
+}
+
+/*Write a program in C that will find how many bytes are required to store
+(a) 37 and (b) 37.0 */
+#include<stdio.h>
+
+int main() {
+    int a=37;
+    float b=37.0;
+    printf("%u\n", sizeof(a));
+    printf("%u\n", sizeof(b));
+
+
+
+
+    return 0;
+}
+
+/*Write a program in C to find the sum and average of two numbers where one
+number is even and another is odd.*/
+#include<stdio.h>
+
+int main() {
+    int sum,a=4,b=7;
+    float avg;
+    sum=a+b;
+    avg= (float) (a+b)/2;
+    printf("a=4\n");
+    printf("b=7\n");
+    printf("The sum of %d+%d=%d\n", a,b,sum);
+    printf("The average of %d and %d is %0.1f\n", a,b,avg);
+
+
+
+
+
+    return 0;
+    }
+    
+    
+    /*Write a program in C to find the net salary of an employee where the basic
+salary will be accepted as input through keyboard. For calculation of net salary
+you are to consider the following:
+Gross Salary = Basic Salary + HRA + DA, where
+HRA = 30 % of Basic Salary, DA = 119 % of Basic Salary,
+Deductions are as follows:
+PF = 12 % of Basic Salary, PTAX = 200.
+Net Salary = Gross Salary – Deductions.*/
+#include<stdio.h>
+
+int main() {
+    int basic_sal;
+    int gross_sal;
+    int HRA,DA;
+    int NET_sal;
+     int PF,PTAX=200;
+    int deduction;
+    printf("Enter the Basic salary:\n");
+    scanf("%d",&basic_sal);
+    HRA = ((basic_sal)*30)/100;
+    DA = ((basic_sal)*119)/100;
+    PF = ((basic_sal)*12)/100;
+    deduction = PF + PTAX;
+    gross_sal = basic_sal + HRA + DA;
+
+    NET_sal = gross_sal - deduction;
+
+    printf("The net salary is:%d", NET_sal);
+
+
+
+    return 0;
+}
+
