@@ -1,1 +1,211 @@
+//Write a program in C to find the largest of three input numbers.
+#include<stdio.h>
+
+int main() {
+    int a,b,c;
+    printf("Enter three numbers:\n");
+    scanf("%d", &a);
+    scanf("%d", &b);
+    scanf("%d", &c);
+    if( a>b && a>c ){
+        printf("%d is the largest.\n", a);
+    }
+    else if( b>a && b>c ){
+        printf("%d is the largest.\n", b);
+    }
+    else{
+        printf("%d is the largest\n", c);
+    }
+    return 0;
+}
+
+
+
+//write a program in C to check whether a given year is leap year or not.
+#include<stdio.h>
+
+int main() {
+    int year;
+    printf("Enter a year:\n");
+    scanf("%d",&year);
+    if(year%4==0){
+        if(year%100==0){
+            if(year%400==0){
+                printf("This is Leap year.\n");
+            }
+            else
+            printf("This is not a Leap year.\n");
+        }
+        else 
+        printf("This is a Leap year.\n");
+    }
+    else
+    printf("This is not a Leap year.\n");
+
+    return 0;
+}
+
+
+
+
+/*Write a program in C to check whether a valid triangle can be formed or not,
+where the lengths of the sides are entered through keyboard.*/
+#include <stdio.h>
+
+int main()
+{
+
+    int a, b, c;
+    printf("Enter the sides of the triangle:\n");
+    scanf("%d", &a);
+    scanf("%d", &b);
+    scanf("%d", &c);
+
+    if (a < (b + c))
+        if (b < (a + c))
+            if (c < (a + b))
+                printf("This is a valid triangle.\n");
+            else
+                printf("This is a invalid triangle.\n");
+        else
+            printf("This is a invalid triangle.\n");
+    else
+        printf("This is a invalid triangle.\n");
+    return 0;
+}
+
+
+/*Write a program in C to check whether a character entered through the
+keyboard is a capital letter, a small letter, a digit or a special symbol.*/
+#include <stdio.h>
+
+int main()
+{
+    char x;
+    printf("Enter a charcter\n");
+    scanf("%c", &x);
+    if (x >= 65 && x <= 90)
+        printf("%c is an upper case alphabet\n", x);
+
+    else if (x >= 97 && x <= 122)
+        printf("%c is a lower case character", x);
+
+    else if (x >= 48 && x <= 57)
+        printf(" %c is a numberic digit", x);
+    else
+        printf("%c is some other character", x);
+
+    return 0;
+}
+
+
+/*Write a program in C to find the real roots of a quadratic equation where the
+values of three coefficients are accepted as input.*/
+#include<stdio.h>
+#include<math.h>
+
+int main() {
+    float a,b,c,D,D1,x1,x2;
+    printf("Enter the coefficient of x^2:");
+    scanf("%f",&a);
+    printf("Enter the coefficient of x:");
+     scanf("%f",&b);
+    printf("Enter the coefficient of x^0:");
+     scanf("%f",&c);
+     D=(b*b) - (4*a*c);
+    D1= sqrt(D);
+x1= (-b+D)/2*a;
+x2= (-b-D)/2*a;
+printf("The roots of the quadratic equation are %0.2f and %0.2f", x1,x2);
+
+
+    return 0;
+    }
+    
+    
+    /*Write a program in C to find the largest of three given numbers using
+conditional / ternary operator.*/
+#include<stdio.h>
+
+int main() {
+    int a,b,c;
+    printf("Enter three numbers:\n");
+    scanf("%d",&a);
+    scanf("%d",&b);
+    scanf("%d",&c);
+    printf("THE LARGEST NUMBER IS BELOW:\n");
+ (a>b)?((a>c)?printf("%d",a):printf("%d",c)):((b>c)?printf("%d",b):printf("%d",c));
+    return 0;
+}
+
+/*Write a program in C to realize the following function:
+f(x) = 6x+1 when x>50,
+= 2x^2+3 when 30≤x≤50,
+= 5x^3-6 when 1≤x≤29,
+= 0 otherwise.*/
+#include<stdio.h>
+
+int main() {
+    int x,result;
+    printf("Enter the value of x:\n");
+    scanf("%d",&x);
+    if(x>50){
+        result = 6*x+1;
+    }
+    else if( x>=30 && x<=50){
+        result = ((2*x*x)-6);
+    }
+    else if( x>=1 && x<=29 ){
+        result = ((5*x*x*x)-6);
+    }
+    else
+    result=0;
+
+    printf("The Result: %d", result);
+    return 0;
+}
+
+
+
+
+/*Write a program in C to accept the marks obtained by a student in three
+subjects of 100 marks each in an examination. Give the grade of the student as
+follows:
+Percentage of Marks Division
+≥ 60 1st
+≥ 45 but < 60 2nd
+≥ 34 but < 45 3rd
+< 34 Fail*/
+#include <stdio.h>
+
+int main()
+{
+    int sub1, sub2, sub3, percentage;
+    printf("Enter the marks obtained in 1st subject:");
+    scanf("%d", &sub1);
+    printf("Enter the marks obtained in 2nd subject:");
+    scanf("%d", &sub2);
+    printf("Enter the marks obtained in 3rd subject:");
+    scanf("%d", &sub3);
+    percentage = (sub1 + sub2 + sub3) / 3;
+    if(percentage>100){
+        printf("Invalid Entry");
+    }
+    else if (percentage >= 60)
+    {
+        printf("1st Division");
+    }
+    else if (percentage >= 45 && percentage < 60)
+    {
+        printf("2nd Division");
+    }
+    else if (percentage >= 34 && percentage < 45)
+    {
+        printf("3rd Division");
+    }
+    else
+        printf("Fail");
+
+    return 0;
+}
 
